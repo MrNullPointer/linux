@@ -3251,7 +3251,7 @@ static int op_lock_and_prep(struct drm_exec *exec, struct xe_vm *vm,
 		if (!xe_vma_is_cpu_addr_mirror(vma)) {
 			region = op->prefetch.region;
 			xe_assert(vm->xe, region == DRM_XE_CONSULT_MEM_ADVISE_PREF_LOC ||
-				  region <= ARRAY_SIZE(region_to_mem_type));
+				  region < ARRAY_SIZE(region_to_mem_type));
 		}
 
 		/*
